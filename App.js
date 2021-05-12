@@ -1,10 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import LoginScreen from "./screens/LoginScreen";
 import Navigator from "./navigate/NavigationStack";
+import LandingScreen from "./screens/LandingScreen";
 
 export default function App() {
   const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
@@ -20,13 +21,13 @@ export default function App() {
     });
   }, []);
 
-  if (setIsFirstLaunch === null) {
+  if (isFirstLaunch === null) {
     return null;
   } else if (isFirstLaunch === true) {
     return <Navigator />;
   } else {
-    return <LoginScreen />;
-  } 
+    return <Navigator />;
+  }
 }
 
 const styles = StyleSheet.create({
