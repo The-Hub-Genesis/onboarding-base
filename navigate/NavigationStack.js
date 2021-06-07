@@ -6,12 +6,18 @@ import OnboardingScreen from "../screens/OnboardingScreen";
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
 import LandingScreen from "../screens/LandingScreen";
+import YourNameScreen from "../screens/YourNameScreen";
+import SettingProfPhotoScreen from "../screens/SettingProfPhotoScreen";
+import TestScreen from "../screens/TestScreen";
 
 const NavigationStack = createStackNavigator({
   Landing: LandingScreen,
   Login: LoginScreen,
   Signup: SignupScreen,
   Onboarding: OnboardingScreen,
+  YourName: YourNameScreen,
+  SettingProfPhoto: SettingProfPhotoScreen,
+  Test: TestScreen,
 });
 
 export default createAppContainer(NavigationStack);
