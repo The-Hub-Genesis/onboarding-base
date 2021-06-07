@@ -29,7 +29,7 @@ import { Button, View } from 'react-native';
 
 const { primary, secondary, inactive, text } = Colors;
 
-const LoginScreen = () => {
+const LoginScreen = (props) => {
   const [hidePassword, setHidePassword] = useState(true);
   return (
     <>
@@ -84,7 +84,9 @@ const LoginScreen = () => {
                 </SecondaryButton>
                 <ExtraView>
                   <ExtraText>Don't have an account? </ExtraText>
-                  <TextLinkContent>Sign-up</TextLinkContent>
+                  <TextLinkContent onPress={() => {
+                    props.navigation.navigate({ routeName: "Signup"})
+                  }}>Sign-up</TextLinkContent>
                 </ExtraView>
               </StyledFormArea>
             )}
