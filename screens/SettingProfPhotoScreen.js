@@ -60,6 +60,7 @@ const SettingProfPhotoScreen = () => {
   const [userPhoto, setUserPhoto] = useState("");
   const [visible, setVisible] = useState(false);
 
+  const [pickedImage, setPickedImage] = useState();
   // camera permissions here
   const verifyPermissions = async () => {
     const result = await Permissions.askAsync(Permissions.CAMERA);
@@ -79,7 +80,14 @@ const SettingProfPhotoScreen = () => {
     if (!hasPermission) {
       return;
     }
-    ImagePicker.launchCameraAsync();
+    const image = await ImagePicker.launchCameraAsync({
+      allowsEditing: true,
+      aspect: [16, 9],
+      quality: 0.5,
+    });
+
+    console.log(image);
+    setPickedImage(image.uri);
   };
 
   //   const dispatch = useDispatch();
@@ -92,6 +100,11 @@ const SettingProfPhotoScreen = () => {
     <ScrollView>
       <View style={styles.form}>
         <Text style={styles.label}>Add your profile photo</Text>
+        {!pickedImage ? (
+          <Text>No image picked yet. </Text>
+        ) : (
+          <Image style={styles.image} source={{ uri: pickedImage }} />
+        )}
         {/* <ImagePicker /> */}
         <View
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
