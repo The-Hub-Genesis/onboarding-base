@@ -13,6 +13,8 @@ import photoActions from "../store/initialPhotoAction";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 
+import { ButtonText, StyledButton } from "./../components/styles";
+
 const ModalPopup = ({ visible, children }) => {
   const [showModal, setShowModal] = useState(visible);
   const scaleValue = useRef(new Animated.Value(0)).current;
@@ -56,7 +58,7 @@ const ModalPopup = ({ visible, children }) => {
   );
 };
 
-const SettingProfPhotoScreen = () => {
+const SettingProfPhotoScreen = (props) => {
   const [userPhoto, setUserPhoto] = useState("");
   const [visible, setVisible] = useState(false);
 
@@ -111,18 +113,27 @@ const SettingProfPhotoScreen = () => {
         >
           <ModalPopup visible={visible}>
             <Text>Add a profile photo</Text>
-            <View style={{ alignItems: "center" }}>
-              <Button title="Take a Photo" onPress={takeImageHandler} />
-            </View>
-            <View style={{ alignItems: "center" }}>
-              <Button title="Choose from Photos" />
-            </View>
-            <View style={{ alignItems: "center" }}>
-              <Button title="Cancel" onPress={() => setVisible(false)} />
-            </View>
+
+            <StyledButton onPress={takeImageHandler}>
+              <ButtonText>Take a Photo</ButtonText>
+            </StyledButton>
+            <StyledButton>
+              <ButtonText>Choose from Photos</ButtonText>
+            </StyledButton>
+
+            <StyledButton onPress={() => setVisible(false)}>
+              <ButtonText>Cancel</ButtonText>
+            </StyledButton>
           </ModalPopup>
           <Button title="Add a Photo" onPress={() => setVisible(true)} />
         </View>
+        <StyledButton
+          onPress={() => {
+            props.navigation.navigate({ routeName: "Interests" });
+          }}
+        >
+          <ButtonText>Next</ButtonText>
+        </StyledButton>
       </View>
     </ScrollView>
   );

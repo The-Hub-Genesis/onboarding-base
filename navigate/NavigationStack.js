@@ -9,6 +9,8 @@ import LandingScreen from "../screens/LandingScreen";
 import YourNameScreen from "../screens/YourNameScreen";
 import SettingProfPhotoScreen from "../screens/SettingProfPhotoScreen";
 import TestScreen from "../screens/TestScreen";
+import InterestsScreen from "../screens/InterestsScreen";
+import InterestingQuestionScreen from "../screens/InterestingQuestionScreen";
 
 const NavigationStack = createStackNavigator({
   Landing: LandingScreen,
@@ -18,6 +20,8 @@ const NavigationStack = createStackNavigator({
   YourName: YourNameScreen,
   SettingProfPhoto: SettingProfPhotoScreen,
   Test: TestScreen,
+  Interests: InterestsScreen,
+  InterestingQuestion: InterestingQuestionScreen,
 });
 
 export default createAppContainer(NavigationStack);
