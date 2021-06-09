@@ -33,7 +33,7 @@ const InterestingQuestionScreen = (props) => {
       </Text>
       <Text style={styles.subheading}>
         Challenge other’s minds and show a little more of your personality
-      </Text>
+      </Text> 
       <TextInput
         style={styles.interestingQuestion}
         placeholder={"Ask a question"}
@@ -53,7 +53,7 @@ const InterestingQuestionScreen = (props) => {
       })}
       <StyledButton
         onPress={() => {
-          props.navigation.navigate({ routeName: "InterestingQuestion" });
+          props.navigation.navigate({ routeName: "JoinGroup" });
         }}
       >
         <ButtonText>Next</ButtonText>

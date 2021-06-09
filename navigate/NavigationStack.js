@@ -11,6 +11,8 @@ import SettingProfPhotoScreen from "../screens/SettingProfPhotoScreen";
 import TestScreen from "../screens/TestScreen";
 import InterestsScreen from "../screens/InterestsScreen";
 import InterestingQuestionScreen from "../screens/InterestingQuestionScreen";
+import JoinGroupScreen from "../screens/JoinGroupScreen";
+import WelcomeScreen from "../screens/WelcomeScreen";
 
 const NavigationStack = createStackNavigator({
   Landing: LandingScreen,
@@ -22,6 +24,8 @@ const NavigationStack = createStackNavigator({
   Test: TestScreen,
   Interests: InterestsScreen,
   InterestingQuestion: InterestingQuestionScreen,
+  JoinGroup: JoinGroupScreen,
+  Welcome: WelcomeScreen,
 });
 
 export default createAppContainer(NavigationStack);
