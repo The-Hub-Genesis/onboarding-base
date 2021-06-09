@@ -125,6 +125,15 @@ const SignupScreen = (props) => {
   );
 };
 
+SignupScreen.navigationOptions = {
+  headerTitle: "",
+  headerStyle: {
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+};
+
 const MyTextInput = ({
   label,
   icon,

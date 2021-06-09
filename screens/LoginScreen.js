@@ -74,10 +74,9 @@ const LoginScreen = (props) => {
                 />
                 <MsgBox>...</MsgBox>
                 <StyledButton
-                  // onPress={() => {
-                  //   props.navigation.navigate({ routeName: "Test" });
-                  // }}
-                 
+                // onPress={() => {
+                //   props.navigation.navigate({ routeName: "Test" });
+                // }}
                 >
                   <ButtonText>Login</ButtonText>
                 </StyledButton>
@@ -111,6 +110,15 @@ const LoginScreen = (props) => {
       </StyledContainer>
     </>
   );
+};
+
+LoginScreen.navigationOptions = {
+  headerTitle: "",
+  headerStyle: {
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
 };
 
 const MyTextInput = ({

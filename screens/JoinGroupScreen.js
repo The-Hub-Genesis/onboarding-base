@@ -52,6 +52,17 @@ const JoinGroupScreen = (props) => {
   );
 };
 
+JoinGroupScreen.navigationOptions = {
+  headerTitle: "",
+  headerStyle: {
+    backgroundColor: "#007070",
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+};
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

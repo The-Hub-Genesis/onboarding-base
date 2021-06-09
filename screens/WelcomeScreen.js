@@ -9,7 +9,7 @@ import {
   SecondaryButtonText,
 } from "./../components/styles";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = (props) => {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -25,7 +25,7 @@ const WelcomeScreen = () => {
       <View style={styles.buttonContainer}>
         <StyledButton
           onPress={() => {
-            props.navigation.navigate({ routeName: "Signup" });
+            props.navigation.navigate({ routeName: "Onboarding" });
           }}
         >
           <ButtonText>Continue</ButtonText>
@@ -34,6 +34,17 @@ const WelcomeScreen = () => {
     </View>
   );
 };
+
+WelcomeScreen.navigationOptions = {
+  headerTitle: "",
+  headerStyle: {
+    backgroundColor: "rgba(0, 50, 50, 1)",
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+};
+
 
 const styles = StyleSheet.create({
   container: {

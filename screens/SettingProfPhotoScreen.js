@@ -139,6 +139,17 @@ const SettingProfPhotoScreen = (props) => {
   );
 };
 
+SettingProfPhotoScreen.navigationOptions = {
+  headerTitle: "",
+  headerStyle: {
+    backgroundColor: "#007070",
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+};
+
+
 const styles = StyleSheet.create({
   form: {
     margin: 30,

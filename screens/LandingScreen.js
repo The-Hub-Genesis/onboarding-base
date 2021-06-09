@@ -42,6 +42,17 @@ const LandingScreen = (props) => {
     </View>
   );
 };
+
+LandingScreen.navigationOptions = {
+  headerTitle: "",
+  headerStyle: {
+    backgroundColor: "rgba(0, 50, 50, 1)",
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
