@@ -86,7 +86,11 @@ const SignupScreen = (props) => {
                   setHidePassword={setHidePassword}
                 />
                 <MsgBox>...</MsgBox>
-                <StyledButton onPress={handleSubmit}>
+                <StyledButton
+                  onPress={() => {
+                    props.navigation.navigate({ routeName: "YourName" });
+                  }}
+                >
                   <ButtonText>Sign-Up</ButtonText>
                 </StyledButton>
                 <Line />
@@ -104,9 +108,13 @@ const SignupScreen = (props) => {
                 </SecondaryButton>
                 <ExtraView>
                   <ExtraText>Already have an account? </ExtraText>
-                  <TextLinkContent onPress={() => {
-                    props.navigation.navigate({ routeName: "Login"})
-                  }}>Log-in</TextLinkContent>
+                  <TextLinkContent
+                    onPress={() => {
+                      props.navigation.navigate({ routeName: "Login" });
+                    }}
+                  >
+                    Log-in
+                  </TextLinkContent>
                 </ExtraView>
               </StyledFormArea>
             )}

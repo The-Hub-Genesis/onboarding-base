@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Formik } from 'formik';
-import { Octicons, Ionicons, Fontisto } from '@expo/vector-icons';
+import React, { useState } from "react";
+import { StatusBar } from "expo-status-bar";
+import { Formik } from "formik";
+import { Octicons, Ionicons, Fontisto } from "@expo/vector-icons";
 import {
   StyledContainer,
   InnerContainer,
@@ -24,8 +24,8 @@ import {
   TextLinkContent,
   SecondaryButton,
   SecondaryButtonText,
-} from './../components/styles';
-import { Button, View } from 'react-native';
+} from "./../components/styles";
+import { Button, View } from "react-native";
 
 const { primary, secondary, inactive, text } = Colors;
 
@@ -36,10 +36,13 @@ const LoginScreen = (props) => {
       <StyledContainer>
         <StatusBar style="dark" />
         <InnerContainer>
-          <PageLogo resizeMode="cover" source={require('./../assets/img/comet.png')} />
+          <PageLogo
+            resizeMode="cover"
+            source={require("./../assets/img/comet.png")}
+          />
           {/* <PageTitle>Comet</PageTitle> */}
           <Formik
-            initialValues={{ email: '', password: '' }}
+            initialValues={{ email: "", password: "" }}
             onSubmit={(values) => {
               console.log(values);
             }}
@@ -51,8 +54,8 @@ const LoginScreen = (props) => {
                   icon="mail"
                   placeholder="meredithgrey@gmail.com"
                   placeholderTextColor={inactive}
-                  onChangeText={handleChange('email')}
-                  onBlur={handleBlur('email')}
+                  onChangeText={handleChange("email")}
+                  onBlur={handleBlur("email")}
                   value={values.email}
                   keyboardType="email-address"
                 />
@@ -61,8 +64,8 @@ const LoginScreen = (props) => {
                   icon="lock"
                   placeholder="*********"
                   placeholderTextColor={inactive}
-                  onChangeText={handleChange('password')}
-                  onBlur={handleBlur('password')}
+                  onChangeText={handleChange("password")}
+                  onBlur={handleBlur("password")}
                   value={values.password}
                   secureTextEntry={hidePassword}
                   isPassword={true}
@@ -70,23 +73,36 @@ const LoginScreen = (props) => {
                   setHidePassword={setHidePassword}
                 />
                 <MsgBox>...</MsgBox>
-                <StyledButton onPress={handleSubmit}>
+                <StyledButton
+                  // onPress={() => {
+                  //   props.navigation.navigate({ routeName: "Test" });
+                  // }}
+                 
+                >
                   <ButtonText>Login</ButtonText>
                 </StyledButton>
                 <Line />
                 <SecondaryButton facebook={true} onPress={handleSubmit}>
                   <Fontisto name="facebook" color={text} size={25} />
-                  <SecondaryButtonText facebook={true}>Sign-in with Facebook</SecondaryButtonText>
+                  <SecondaryButtonText facebook={true}>
+                    Sign-in with Facebook
+                  </SecondaryButtonText>
                 </SecondaryButton>
                 <SecondaryButton google={true} onPress={handleSubmit}>
                   <Fontisto name="google" color={text} size={25} />
-                  <SecondaryButtonText google={true}>Sign-in with Google</SecondaryButtonText>
+                  <SecondaryButtonText google={true}>
+                    Sign-in with Google
+                  </SecondaryButtonText>
                 </SecondaryButton>
                 <ExtraView>
                   <ExtraText>Don't have an account? </ExtraText>
-                  <TextLinkContent onPress={() => {
-                    props.navigation.navigate({ routeName: "Signup"})
-                  }}>Sign-up</TextLinkContent>
+                  <TextLinkContent
+                    onPress={() => {
+                      props.navigation.navigate({ routeName: "Signup" });
+                    }}
+                  >
+                    Sign-up
+                  </TextLinkContent>
                 </ExtraView>
               </StyledFormArea>
             )}
@@ -97,7 +113,14 @@ const LoginScreen = (props) => {
   );
 };
 
-const MyTextInput = ({ label, icon, isPassword, hidePassword, setHidePassword, ...props }) => {
+const MyTextInput = ({
+  label,
+  icon,
+  isPassword,
+  hidePassword,
+  setHidePassword,
+  ...props
+}) => {
   return (
     <View>
       <LeftIcon>
@@ -107,7 +130,11 @@ const MyTextInput = ({ label, icon, isPassword, hidePassword, setHidePassword, .
       <StyledTextInput {...props} />
       {isPassword && (
         <RightIcon onPress={() => setHidePassword(!hidePassword)}>
-          <Ionicons name={hidePassword ? 'md-eye-off' : 'md-eye'} size={30} color={secondary} />
+          <Ionicons
+            name={hidePassword ? "md-eye-off" : "md-eye"}
+            size={30}
+            color={secondary}
+          />
         </RightIcon>
       )}
     </View>

@@ -6,12 +6,26 @@ import OnboardingScreen from "../screens/OnboardingScreen";
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
 import LandingScreen from "../screens/LandingScreen";
+import YourNameScreen from "../screens/YourNameScreen";
+import SettingProfPhotoScreen from "../screens/SettingProfPhotoScreen";
+import TestScreen from "../screens/TestScreen";
+import InterestsScreen from "../screens/InterestsScreen";
+import InterestingQuestionScreen from "../screens/InterestingQuestionScreen";
+import JoinGroupScreen from "../screens/JoinGroupScreen";
+import WelcomeScreen from "../screens/WelcomeScreen";
 
 const NavigationStack = createStackNavigator({
   Landing: LandingScreen,
   Login: LoginScreen,
   Signup: SignupScreen,
   Onboarding: OnboardingScreen,
+  YourName: YourNameScreen,
+  SettingProfPhoto: SettingProfPhotoScreen,
+  Test: TestScreen,
+  Interests: InterestsScreen,
+  InterestingQuestion: InterestingQuestionScreen,
+  JoinGroup: JoinGroupScreen,
+  Welcome: WelcomeScreen,
 });
 
 export default createAppContainer(NavigationStack);
